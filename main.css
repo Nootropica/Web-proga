@@ -7,3 +7,21 @@ body {
 a {
     text-decoration: none;
 }
+main {
+    background-color: rgb(139, 139, 139);
+    color: black;
+    font-family: Arial;
+    margin: 0px;
+}
+header {
+    background-color: black;
+    color: gold;
+    font-family: Arial;
+    margin: 0px;
+}
+footer {
+    background-color: azure;
+    color: rebeccapurple;
+    font-family: Arial;
+    margin: 0px;
+}
