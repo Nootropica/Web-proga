@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Печенкин Владислав Витальевич. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="C:\Users\moguc\OneDrive\Рабочий стол\учеба\2 курс\WEB-программирование\исходники\web-front-labs\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="C:\Users\moguc\OneDrive\Рабочий стол\учеба\2 курс\WEB-программирование\исходники\web-front-labs\favicon-16x16.png">
+    <link rel="icon" href="C:\Users\moguc\OneDrive\Рабочий стол\учеба\2 курс\WEB-программирование\исходники\web-front-labs\favicon-32x32.png">
+    <style>
+        div {
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: white;
+            border: 1px dotted darkgreen;
+            margin: 15px;
+        }
+        .position-relative {
+            position: relative;
+            left: 150px;
+            top: -130px;
+            z-index: -1;
+        }
+        .position-relative:hover {
+                z-index: 1;
+        }
+        .position-absolute {
+            position: absolute;
+            left: 300px;
+        }
+        .position-absolute:hover {
+            width: 350px;
+            height: 80px;
+            color: #00BFFF;
+            box-shadow: 0 0 15px #00BFFF;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+        <hr>
+    </header>
+
+    <main>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+
+    <footer>
+        &copy; Владислав Печенкин, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
