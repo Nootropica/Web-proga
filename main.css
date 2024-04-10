@@ -12,7 +12,7 @@ main {
     background-color: rgb(92, 91, 91);
     color: black;
     font-family: Arial;
-    margin: 0px;
+    margin: 10px 20px 28px;
 }
 header {
     background-color: black;
@@ -24,7 +24,6 @@ footer {
     background-color: rgb(241, 241, 241);
     color: #FF8C00;
     font-family: Arial;
-    margin: 10px;
     padding: 5px;
     font-size: 12pt;
     text-align: right;
