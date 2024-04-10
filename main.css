@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(54, 54, 54);
+    background-color: rgb(92, 91, 91);
     color: rgb(193, 255, 252);
     font-family: Arial;
     margin: 0px;
@@ -9,7 +9,7 @@ a {
     transition: 1s 2s;
 }
 main {
-    background-color: rgb(139, 139, 139);
+    background-color: rgb(92, 91, 91);
     color: black;
     font-family: Arial;
     margin: 0px;
@@ -21,10 +21,17 @@ header {
     margin: 0px;
 }
 footer {
-    background-color: azure;
-    color: rebeccapurple;
+    background-color: rgb(241, 241, 241);
+    color: #FF8C00;
     font-family: Arial;
-    margin: 0px;
+    margin: 10px;
+    padding: 5px;
+    font-size: 12pt;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 a:link {
     color: #00BFFF;
@@ -41,4 +48,19 @@ a:hover {
 a:active {
     color: black;
     opacity: 0.3;
+}
+div.menu {
+    border: 7px solid #6495ED90;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+    background-color: rgb(78, 78, 78);
+}
+div.menu:hover {
+    background-color: rgb(92, 91, 91);
+    box-shadow: 0 0 15px #00BFFF;
+}
+h1.labs_zag {
+    text-align: center;
+    
 }
