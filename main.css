@@ -25,3 +25,18 @@ footer {
     font-family: Arial;
     margin: 0px;
 }
+a:link {
+    color: #00BFFF;
+    
+}
+a:visited {
+    color: aquamarine;
+}
+a:hover {
+    color: #7FFF00;
+    text-decoration: underline;
+}
+a:active {
+    color: black;
+    opacity: 0.3;
+}
