@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Печенкин Владислав Витальевич. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script>
+        function showSum() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a + b;
+            alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
+        }
+
+        function showMultiplication() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let inputC = document.getElementById('numberC');
+            let inputD = document.getElementById('numberD');
+            let inputE = document.getElementById('numberE');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value);
+            let e = parseInt(inputE.value);
+
+            let priceA = 80;
+            let priceB = 50;
+            let priceC = 180;
+            let priceD = 40;
+            let priceE = 70;
+
+            let result = (a * priceA) + (b * priceB) + (c * priceC) + (d * priceD) + (e * priceE);
+            document.getElementById('output').innerHTML = 'Общая сумма: ' + result + ' рублей';
+        }
+        
+        function showAuthor() {
+            let author = 'Автор страницы:\nПеченкин Владислав Витальевич';
+            alert(author);
+        }
+        function showMessage() {
+            let msg = 'Приветствую вас на моей странице!\nЯ являюсь юным разработчиком, не судите строго';
+            alert(msg);
+        }
+        function clearCart() {
+            document.getElementById('numberA').value = '';
+            document.getElementById('numberB').value = '';
+            document.getElementById('numberC').value = '';
+            document.getElementById('numberD').value = '';
+            document.getElementById('numberE').value = '';
+            document.getElementById('output').innerHTML = '';
+        }
+
+    </script>
+    <style>
+        .message {
+            width: 120px;
+            height: 20px;
+            background-color: #ADFF2F;
+            border: 3px solid;
+            border-radius: 10px 10px;
+            display: inline-block;
+            text-align: center;
+            border-color: #98FB98;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        header {
+            cursor: pointer;
+        }
+        footer {
+            cursor: pointer;
+        }
+        .cart {
+            border: 3px solid #000;
+            border-radius: 5px;
+            padding: 10px;
+            width: 300px;
+            margin: 0 auto;;
+        }
+        .cart h2 {
+            text-align: center;
+        }    
+        .cart input {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        #output {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+      <div class="cart">
+          <h2>Корзина товаров</h2>
+          <label>Молоко (80 руб/шт): <input type="number" id="numberA" min="0" placeholder="Количество бутылок"></label><br>
+          <label>Печенье (50 руб/шт): <input type="number" id="numberB" min="0" placeholder="Количество упаковок"></label><br>
+          <label>Хлопья (180 руб/шт): <input type="number" id="numberC" min="0" placeholder="Количество упаковок"></label><br>
+          <label>Хлеб (40 руб/шт): <input type="number" id="numberD" min="0" placeholder="Количество булок"></label><br>
+          <label>Сахар (70 руб/шт): <input type="number" id="numberE" min="0" placeholder="Количество упаковок"></label><br>
+          <div class="message" onclick="showMultiplication()">Общая сумма</div>
+          <div id="output"></div>
+          <button style="width: 120px; height: 25px; background-color: red; border: 3px solid; border-radius: 10px 10px; display: inline-block; text-align: center; cursor: pointer; margin-top: 10px;"  onclick="clearCart()">Очистить</button>
+      </div>
+      <div id="output"></div>
+    </main>
+
+    <footer ondblclick="showMessage()">
+        &copy; Владислав Печенкин, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
