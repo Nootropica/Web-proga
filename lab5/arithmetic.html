@@ -55,6 +55,13 @@
             let msg = 'Приветствую вас на моей странице!\nЯ являюсь юным разработчиком, не судите строго';
             alert(msg);
         }
+        function changeOutput(buttonNum, backColor, textColor, borderColor, borderWidth, borderStyle) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.border = borderWidth + 'px ' + borderStyle + ' ' + borderColor;
+        }
 
     </script>
     <style>
@@ -75,6 +82,11 @@
         footer {
             cursor: pointer;
         }
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -90,6 +102,14 @@
         <div class="message" onclick="showMultiplication()">Найти произведение</div>
         <div class="message" onclick="showDivision()">Найти частное</div>
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, '#ADFF2F', 'black', 'white', 1, 'solid')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, '#FF4500', 'white', 'black', 3, 'solid')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, '#4682B4', 'white', '#808080', 2, 'solid')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, '#9370DB', 'black', 'white', 5, 'solid')">
+        </div>
+        <div id="output"></div>
     </main>
 
     <footer ondblclick="showMessage()">
