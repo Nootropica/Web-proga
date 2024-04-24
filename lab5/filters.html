@@ -27,6 +27,11 @@
             document.getElementById('grayscaleOutput').innerText = value;
             document.getElementById('grayscaleImage').style.filter = 'grayscale(' + value + ')';
         }
+        function hueRotateChange() {
+            let value = document.getElementById('hueRotateValue').value + 'deg';
+            document.getElementById('hueRotateOutput').innerText = value;
+            document.getElementById('hueRotateImage').style.filter = 'hue-rotate(' + value + ')';
+        }
     </script>
     <style>
         div {
@@ -69,6 +74,12 @@
         </div><br>
         <div><img src="кактус.jpg" id="grayscaleImage" width="700px" height="400px"></div><br>
 
+        <div>
+            Фильтр hueRotate:
+            <input type="range" min="0" max="360" value="0" onchange="hueRotateChange()" id="hueRotateValue">
+            <span id="hueRotateOutput"></span>
+        </div><br>
+        <div><img src="машина 2.jpg" id="hueRotateImage" width="700px" height="400px"></div><br>
 
     </main>
 
