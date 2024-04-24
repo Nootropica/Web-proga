@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Печенкин Владислав Витальевич. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script>
+        function removeCircles (circle) {
+            circle.style.opacity = 0;
+            circle.style.transform = 'scale(0)';
+        }
+        
+        function returnCircles () {
+            let circles = document.getElementsByClassName('circles');
+            for (let circle of circles) {
+                circle.style.opacity = 1;
+                circle.style.transform = 'scale(1)';
+            }
+        }
+    </script>
+
+    <style>
+        button {
+            position: fixed;
+        }
+        .circles {
+            border: 3px solid white;
+            border-radius: 50%;
+            display: grid;
+            position: absolute;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            font-size: 20pt;
+            font-weight: bold;
+            align-items: center;
+            cursor: pointer;
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        #circles1 {
+            background-color: #FF0000;
+            top: 170px;
+            left: 240px;
+        }
+
+        #circles2 {
+            background-color: #7FFF00;
+            top: 280px;
+            left: 100px;
+        }
+
+        #circles3 {
+            background-color: #00FA9A;
+            top: 115px;
+            left: 220px;
+        }
+
+        #circles4 {
+            background-color: #FF1493;
+            top: 200px;
+            left: 300px;
+        }
+
+        #circles5 {
+            background-color: #FF8C00;
+            top: 120px;
+            left: 300px;
+        }
+
+        #circles6 {
+            background-color: #66CDAA;
+            top: 325px;
+            left: 300px;
+        }
+
+        #circles7 {
+            background-color: #FFFF00;
+            top: 290px;
+            left: 500px;
+        }
+
+        #circles8 {
+            background-color: #0000FF;
+            top: 200px;
+            left: 120px;
+        }
+
+        #circles9 {
+            background-color: #FF00FF;
+            top: 470px;
+            left: 220px;
+        }
+
+        #circles10 {
+            background-color: 	#708090;
+            top: 330px;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <button onclick="returnCircles()">Вернуть все круги</button><br>
+
+        <div id="circles1" class="circles" onclick="removeCircles(this)">1</div>
+        <div id="circles2" class="circles" onclick="removeCircles(this)">2</div>
+        <div id="circles3" class="circles" onclick="removeCircles(this)">3</div>
+        <div id="circles4" class="circles" onclick="removeCircles(this)">4</div>
+        <div id="circles5" class="circles" onclick="removeCircles(this)">5</div>
+        <div id="circles6" class="circles" onclick="removeCircles(this)">6</div>
+        <div id="circles7" class="circles" onclick="removeCircles(this)">7</div>
+        <div id="circles8" class="circles" onclick="removeCircles(this)">8</div>
+        <div id="circles9" class="circles" onclick="removeCircles(this)">9</div>
+        <div id="circles10" class="circles" onclick="removeCircles(this)">10</div>
+    </main>
+
+    <footer>
+        &copy; Владислав Печенкин, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
