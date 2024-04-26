@@ -47,16 +47,23 @@
             document.getElementById('sepiaOutput').innerText = value;
             document.getElementById('sepiaImage').style.filter = 'sepia(' + value + ')';
         }
+        function removeImg (img) {
+            img.style.transform = 'scale(0.5)';
+        }
+        function removeIMG (img) {
+            img.style.transform = 'scale(1)';
+        }
     </script>
     <style>
         div {
             color: #2cc7a5;
             margin-bottom: 10px;
         }
+        
     </style>
 </head>
 <body>
-    <header onclick="showAuthor()">
+    <header>
         НГТУ, ФБ, Лабораторная работа 5
     </header>
 
@@ -66,56 +73,56 @@
             <input type="range" min="0" max="20" value="0" onchange="blurChange()" id="blurValue">
             <span id="blurOutput"></span>
         </div>
-        <div><img src="горы.jpg" id="blurImage" width="700px" height="400px"></div>
+        <div><img src="горы.jpg" id="blurImage" width="900px" height="600px" onclick="removeImg(this)" ondblclick="removeIMG(this)" style="cursor: pointer;"></div>
 
         <div>
             Фильтр brightness:
             <input type="range" min="0" max="500" value="100" onchange="brightnessChange()" id="brightnessValue">
             <span id="brightnessOutput"></span>
         </div>
-        <div><img src="джина 2.jpg" id="brightnessImage" width="700px" height="400px"></div>
+        <div><img src="джина 2.jpg" id="brightnessImage" width="900px" height="600px"></div>
 
         <div>
             Фильтр contrast:
             <input type="range" min="0" max="500" value="100" onchange="contrastChange()" id="contrastValue">
             <span id="contrastOutput"></span>
         </div><br>
-        <div><img src="джина.jpg" id="contrastImage" width="700px" height="400px"></div><br>
+        <div><img src="джина.jpg" id="contrastImage" width="900px" height="600px"></div><br>
 
         <div>
             Фильтр grayscale:
             <input type="range" min="0" max="100" value="0" onchange="grayscaleChange()" id="grayscaleValue">
             <span id="grayscaleOutput"></span>
         </div><br>
-        <div><img src="кактус.jpg" id="grayscaleImage" width="700px" height="400px"></div><br>
+        <div><img src="кактус.jpg" id="grayscaleImage" width="900px" height="600px"></div><br>
 
         <div>
             Фильтр hueRotate:
             <input type="range" min="0" max="360" value="0" onchange="hueRotateChange()" id="hueRotateValue">
             <span id="hueRotateOutput"></span>
         </div><br>
-        <div><img src="машина 2.jpg" id="hueRotateImage" width="700px" height="400px"></div><br>
+        <div><img src="машина 2.jpg" id="hueRotateImage" width="900px" height="600px"></div><br>
 
         <div>
             Фильтр invert:
             <input type="range" min="0" max="100" value="0" onchange="invertChange()" id="invertValue">
             <span id="invertOutput"></span>
         </div><br>
-        <div><img src="машина.jpg" id="invertImage" width="700px" height="400px"></div><br>
+        <div><img src="машина.jpg" id="invertImage" width="900px" height="600px"></div><br>
 
         <div>
             Фильтр saturate:
             <input type="range" min="0" max="500" value="100" onchange="saturateChange()" id="saturateValue">
             <span id="saturateOutput"></span>
         </div><br>
-        <div><img src="небо.jpg" id="saturateImage" width="700px" height="400px"></div><br>
+        <div><img src="небо.jpg" id="saturateImage" width="900px" height="600px"></div><br>
 
         <div>
             Фильтр sepia:
             <input type="range" min="0" max="100" value="0" onchange="sepiaChange()" id="sepiaValue">
             <span id="sepiaOutput"></span>
         </div><br>
-        <div><img src="цветок.jpg" id="sepiaImage" width="700px" height="400px"></div><br>
+        <div><img src="цветок.jpg" id="sepiaImage" width="900px" height="600px"></div><br>
 
     </main>
 

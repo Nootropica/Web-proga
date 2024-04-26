@@ -24,11 +24,11 @@
             let inputD = document.getElementById('numberD');
             let inputE = document.getElementById('numberE');
 
-            let a = parseInt(inputA.value);
-            let b = parseInt(inputB.value);
-            let c = parseInt(inputC.value);
-            let d = parseInt(inputD.value);
-            let e = parseInt(inputE.value);
+            let a = Math.max(parseInt(inputA.value), 0) || 0;
+            let b = Math.max(parseInt(inputB.value), 0) || 0;
+            let c = Math.max(parseInt(inputC.value), 0) || 0;
+            let d = Math.max(parseInt(inputD.value), 0) || 0;
+            let e = Math.max(parseInt(inputE.value), 0) || 0;
 
             let priceA = 80;
             let priceB = 50;
@@ -60,8 +60,8 @@
     </script>
     <style>
         .message {
-            width: 120px;
-            height: 20px;
+            width: 240px;
+            height: 30px;
             background-color: #ADFF2F;
             border: 3px solid;
             border-radius: 10px 10px;
@@ -82,14 +82,18 @@
             border-radius: 5px;
             padding: 10px;
             width: 300px;
-            margin: 0 auto;;
+            margin: 0 auto;
         }
         .cart h2 {
             text-align: center;
+            font-size: 25pt;
         }    
         .cart input {
             margin-top: 5px;
             margin-bottom: 10px;
+        }
+        .cart * {
+            font-size: 18pt;
         }
         #output {
             margin-top: 10px;
@@ -111,7 +115,7 @@
           <label>Сахар (70 руб/шт): <input type="number" id="numberE" min="0" placeholder="Количество упаковок"></label><br>
           <div class="message" onclick="showMultiplication()">Общая сумма</div>
           <div id="output"></div>
-          <button style="width: 120px; height: 25px; background-color: red; border: 3px solid; border-radius: 10px 10px; display: inline-block; text-align: center; cursor: pointer; margin-top: 10px;"  onclick="clearCart()">Очистить</button>
+          <button style="width: 120px; height: 35px; background-color: red; border: 3px solid; border-radius: 10px 10px; display: inline-block; text-align: center; cursor: pointer; margin-top: 10px;"  onclick="clearCart()">Очистить</button>
       </div>
       <div id="output"></div>
     </main>
