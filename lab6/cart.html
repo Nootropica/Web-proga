@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Печенкин Владислав Витальевич. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script>
+        function totalScore() {
+            let inputBalance = document.getElementById('balance');
+            let balance = Math.max(parseInt(inputBalance.value), 0);
+
+            let inputA = document.getElementById('quantityA');
+            let inputB = document.getElementById('quantityB');
+            let inputC = document.getElementById('quantityC');
+            let inputD = document.getElementById('quantityD');
+            let inputE = document.getElementById('quantityE');
+            let inputF = document.getElementById('quantityF');
+            let inputG = document.getElementById('quantityG');
+
+            let a = parseInt(inputA.value) || 0;
+            let b = parseInt(inputB.value) || 0;
+            let c = parseInt(inputC.value) || 0;
+            let d = parseInt(inputD.value) || 0;
+            let e = parseInt(inputE.value) || 0;
+            let f = parseInt(inputF.value) || 0;
+            let g = parseInt(inputG.value) || 0;
+
+            let priceA = 100;
+            let priceB = 50;
+            let priceC = 50;
+            let priceD = 70;
+            let priceE = 12;
+            let priceF = 30;
+            let priceG = 400;
+
+            let itog = (a * priceA) + (b * priceB) + (c * priceC) + (d * priceD) + (e * priceE) + (f * priceF) + (g * priceG);
+            document.getElementById('output').innerHTML = 'Итого: ' + itog + ' рублей';
+            let message = document.getElementById('result');
+
+            if (balance === '' || isNaN(Number(balance))) {
+                message.innerHTML = 'Введите остаток средств на балансе!';
+            }
+            else if (balance < itog) {
+                message.innerHTML = 'У вас недостаточно средств на балансе!';
+            }
+            else if (a < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0 || g < 0) {
+                message.innerHTML = 'Количество товара не может быть отрицательным!';
+            }
+            else if (!a && !b && !c && !d && !e && !f && !g) {
+                message.innerHTML = 'Нужно выбрать хотя бы один товар!';
+            }
+            else {
+                message.innerHTML = 'Товар успешно оформлен!';
+            }
+        }
+    </script>
+
+    <style>
+        .cartProd {
+            border: 4px solid #9400D3;
+            border-radius: 20px;
+            width: fit-content;
+            height: 750px;
+            text-align: center;
+            align-items: center;
+            padding: 22px;
+            margin: auto;
+            line-height: 1.6;
+            color: white;
+        }
+        button {
+            cursor: pointer;
+            width: 100px;
+            height: 40px;
+            place-items: center;
+            margin-top: 8px;
+        }
+        input {
+            width: 200px;
+        }
+        table {
+            border: 3px solid #F0E68C;
+            border-collapse: collapse;
+            width: fit-content;
+            height: 600px;
+            align-items: center;
+        }
+        td, th {
+            border: 1.5px solid #F0E68C;
+            padding: 5px;
+        }
+        h2 {
+            line-height: 0;
+        }
+    </style>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="cartProd">
+            <div>
+                <label>Мой баланс: <input type="number" placeholder="Введите количество средств" min="0" id="balance"></label>
+            </div>
+
+            <div>
+                <h2>Корзина товаров</h2>
+                <table>
+                    <tr>
+                        <th>№</th>
+                        <th>Название</th>
+                        <th>Единица</th>
+                        <th>Цена</th>
+                        <th>Количество</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Доска</td>
+                        <td>Шт</td>
+                        <td>100 р</td>
+                        <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityA"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Палка</td>
+                        <td>Шт</td>
+                        <td>50 р</td>
+                        <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityB"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Столешница</td>
+                        <td>Шт</td>
+                        <td>500 р</td>
+                        <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityC"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Фасад</td>
+                        <td>Шт</td>
+                        <td>200 р</td>
+                        <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityD"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Ножка</td>
+                        <td>Шт</td>
+                        <td>120 р</td>
+                        <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityE"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Ручка</td>
+                        <td>Шт</td>
+                        <td>70 р</td>
+                        <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityF"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Стекло</td>
+                        <td>Шт</td>
+                        <td>400 р</td>
+                        <td><input type="number" placeholder="Введите количество товара" min="0" id="quantityG"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <button onclick="totalScore()">ОК</button><br>
+            <div id="output"></div>
+            <div id="result"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Владислав Печенкин, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
