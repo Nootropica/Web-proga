@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Печенкин Владислав Витальевич. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <style>
+        .changeBlock {
+            border: 3px solid #ADFF2F;
+            background-color: #E0FFFF;
+            text-align: center;
+            color: #4682B4;
+            width: 60%;
+            margin: auto;
+            font-weight: bold;
+            padding: 5px;
+            cursor: pointer;
+            transition: all 1s ease;
+        }
+        span {
+            transition:0.5s ease;
+        }
+    </style>
+    <script>
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'rgb(255, 255, 0)') {
+                div.style.backgroundColor = 'rgb(0, 255, 0)'; // Зелёный
+                div.style.color = 'rgb(255, 255, 255)'; // Белый
+                document.getElementById('color-name').innerHTML = 'зеленый';
+            }
+            else if (div.style.backgroundColor == 'rgb(0, 255, 0)') {
+                div.style.backgroundColor = 'rgb(0, 0, 255)'; // Синий
+                div.style.color = 'rgb(255, 255, 0)'; // Жёлтый
+                document.getElementById('color-name').innerHTML = 'синий';
+            }
+            else if (div.style.backgroundColor == 'rgb(0, 0, 255)') {
+                div.style.backgroundColor = 'rgb(255, 0, 0)'; // Красный
+                div.style.color = 'rgb(0, 255, 0)'; // Зелёный
+                document.getElementById('color-name').innerHTML = 'красный';
+            }
+            else if (div.style.backgroundColor == 'rgb(255, 0, 0)') {
+                div.style.backgroundColor = 'rgb(255, 255, 255)'; // Белый
+                div.style.color = 'rgb(0, 0, 0)'; // Чёрный
+                document.getElementById('color-name').innerHTML = 'белый';
+            }
+            else if (div.style.backgroundColor == 'rgb(255, 255, 255)') {
+                div.style.backgroundColor = 'rgb(0, 0, 0)'; // Чёрный
+                div.style.color = 'rgb(255, 255, 255)'; // Белый
+                document.getElementById('color-name').innerHTML = 'черный';
+            }
+            else {
+                div.style.backgroundColor = 'rgb(255, 255, 0)'; // Жёлтый
+                div.style.color = 'rgb(0, 0, 0)'; // Чёрный
+                document.getElementById('color-name').innerHTML = 'желтый';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="changeBlock" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">Светло-голубой</span><br>
+            Сделайте двойной щелчок, чтобы сменить цвет.
+        </div>
+    </main>
+
+    <footer>
+        &copy; Владислав Печенкин, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
