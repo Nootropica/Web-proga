@@ -18,6 +18,25 @@
             padding: 22px;
             margin: 10px auto;
         }
+        button {
+                cursor: pointer;
+                width: fit-content;
+                margin: auto;
+                display: grid;
+                place-items: center;
+            }
+        input {
+            width: 60%;
+            text-align: center;
+            }
+        .rools {
+            border: 3px solid #7FFF00;
+            border-radius: 20px;
+            background-color: #8FBC8F;
+            padding: 19px;
+            width: fit-content;
+            margin: auto;
+            }
     </style>
 
     <script>
@@ -70,6 +89,22 @@
                 let input = document.getElementById('user-number');
                 input.value = '';
             }
+        function showRools() {
+            let Button1 = document.getElementById('1button');
+            Button1.style.display = 'none';
+            let Button2 = document.getElementById('2button');
+            Button2.style.display = 'block';
+            let List = document.getElementById('list');
+            List.style.display = 'block';
+        }
+        function hideRools() {
+            let Button1 = document.getElementById('1button');
+            Button1.style.display = 'block';
+            let Button2 = document.getElementById('2button');
+            Button2.style.display = 'none';
+            let List = document.getElementById('list');
+            List.style.display = 'none';
+        }
     </script>
 </head>
 <body>
@@ -106,6 +141,25 @@
                 <button onclick="again()">Сыграть ещё раз</button>
             </div>
         </div>
+
+        <div class="rools">
+            <div id="1button" style="display: block;">
+                <button onclick="showRools()">Показать правила игры</button>
+            </div>
+            <div id="2button" style="display: none;">
+                <button onclick="hideRools()">Скрыть правила игры</button>
+            </div>
+            <div id="list" style="display: none;">
+                <h2>Правила игры:</h2>
+                <ol type="I">
+                    <li>Для начала игры "Угадай Число" нажмите кнопку "Сыграть в игру"</li>
+                    <li>Загадайте число из диапазона от 1 до 100</li>
+                    <li>Напишите выбранное вами число в поле для ввода</li>
+                    <li>Нажмите кнопку "Угадать" для проверки выбранного вами числа</li>
+                    <li>Измените введенное вами значение в поле в соответствии с появившимся сообщением</li>
+                    <li>Нажмите кнопку "Сыграть ещё раз" в случае победы и желании начать игру заново!</li>
+                </ol>
+            </div>
 
     </main>
 
