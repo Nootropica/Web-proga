@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Печенкин Владислав Витальевич. Котировки акций компании ТГК-2</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script>
+        function showStock() {
+            const prices = [
+                0.0125, 0.0125, 0.01296, 0.01323, 0.01321,
+                0.013255, 0.01335, 0.01341, 0.013205, 0.01329
+            ];
+            const dates = [
+                '22.05.2024', '21.05.2024', '20.05.2024', '17.05.2024', '16.05.2024',
+                '15.05.2024', '14.05.2024', '13.05.2024', '10.05.2024', '08.05.2024'
+            ];
+
+            let table = document.getElementById('tgk2-table');
+            let maxPrice = prices[0];
+            let minPrice = prices[0];
+            for(let i = 0; i < prices.length; i++) {
+                let tr = document.createElement('tr'); 
+                let tdPrice = document.createElement('td');
+                let tdDate = document.createElement('td');
+                let tdDiff = document.createElement('td');
+                tdDate.innerText = dates[i];
+                tdPrice.innerText = prices[i];
+
+                if (i > 0) {
+                    let diff = prices[i] - prices[i - 1];
+                    tdDiff.innerText = diff.toFixed(5);
+                } else {
+                    tdDiff.innerText = '-';
+                }
+
+                tr.appendChild(tdDate);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdDiff);
+                table.appendChild(tr);
+
+                if (prices[i] > maxPrice) {
+                    maxPrice = prices[i];
+                }
+                if (prices[i] < minPrice) {
+                    minPrice = prices[i];
+                }
+            }
+                
+                let sum = 0;
+                for(let i = 0; i < prices.length; i++) {
+                    sum += prices[i]; 
+                }
+                let average = (sum / prices.length).toFixed(5);
+
+                let averageRes = document.getElementById('average');
+                averageRes.innerHTML = `Среднее значение: ${average}`;
+
+                let minRes = document.getElementById('min');
+                minRes.innerHTML = `Минимальное значение: ${minPrice.toFixed(5)}`;
+
+                let maxRes = document.getElementById('max');
+                maxRes.innerHTML = `Максимальное значение: ${maxPrice.toFixed(5)}`;                
+            }
+        </script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: fit-content;
+            height: fit-content;
+            text-align: center;
+            align-items: center;
+            line-height: 1.6;
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="showStock()">Курс акций ТГК-2</button>
+            <table border="1" id="tgk2-table"></table>
+            <div id="average" style="color: aliceblue;"></div>
+            <div id="min" style="color: aliceblue;"></div>
+            <div id="max" style="color: aliceblue;"></div>
+    </main>
+
+    <footer>
+        &copy; Владислав Печенкин, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
