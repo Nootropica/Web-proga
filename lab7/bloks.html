@@ -35,6 +35,22 @@
                 main.appendChild(newBlock);
             }
         }
+        
+        function add20_50() {
+            let main = document.querySelector('main');
+            for(let i = 20; i<=50; i+=2.5) {
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = '#e2b2c5';
+                newBlock.style.height = '30px';
+                newBlock.style.border = '3.5px solid #905aa8';
+                newBlock.style.width = '200px';
+                newBlock.style.margin = '8px 0';
+                newBlock.style.color = 'black';
+                newBlock.innerHTML = `${i}`
+
+                main.appendChild(newBlock);
+            }    
+        }
 
     </script>
 </head>
@@ -47,6 +63,7 @@
         <button onclick="addNewBlock()">Добавить блок</button>
         <input type="number" placeholder="Введите количество блоков" min="0" id="qtBlocks">
         <button onclick="addNewBlocks()">Добавить блоки</button>
+        <button onclick="add20_50()">20 => 50</button>
     </main>
 
     <footer>
