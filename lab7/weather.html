@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Печенкин Владислав Витальевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script>
+        function getWeatherForecast() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=temperature_2m&timezone=auto`;
+                    fetch(url)
+                        .then(response => response.json())
+                        .then(data => {
+                            const temperatures = data.hourly.temperature_2m;
+                            const currentHour = new Date().getHours();
+                            const eightAMIndex = Math.max(0, currentHour - 8);
+                            const twelveDayIndex = Math.max(0, currentHour - 12);
+                            const eightPMIndex = Math.max(0, currentHour - 20);
+
+                            const outputDiv = document.getElementById('output');
+                            outputDiv.innerHTML = `
+                            <div class="info-box">
+                                <h2>Прогноз погоды на сегодняшний день:</h2>
+                                <div>Температура в 8 часов утра: ${temperatures[eightAMIndex]}°C</div>
+                                <div>Температура в 12 часов дня: ${temperatures[twelveDayIndex]}°C</div>
+                                <div>Температура в 20 часов вечера: ${temperatures[eightPMIndex]}°C</div>
+                            </div>
+                            `;
+                        })
+                        .catch(error => {
+                            console.error('Ошибка:', error);
+                        });
+                }, function(error) {
+                    console.error('Ошибка геолокации:', error);
+                });
+            } else {
+                console.error('Геолокация не поддерживается в вашем браузере');
+            }
+        }
+    </script>
+
+    <style>
+        .info-box {
+            border: 2px solid #fff;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #92ccc3;
+            font-family: Arial, sans-serif;
+            color: #0979a4;
+            height: auto;
+            width: 500px;
+        }
+
+        .info-box h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .info-box p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="getWeatherForecast()">Получить прогноз погоды</button>
+        <div id="output"></div>
+    </main>
+
+    <footer>
+        &copy; Владислав Печенкин, ФБИ-22, 2 курс, 2024
+    </footer>
+    
+</body>
+</html>
