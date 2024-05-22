@@ -94,6 +94,39 @@
             }
         }
 
+        function coloredCircles() {
+            let inputCircles = document.getElementById('qtCircles');
+            let inCr = parseInt(inputCircles.value) || 0;
+
+            let main = document.querySelector('main');
+            for(let i = inCr; i>0; i--) {    
+                let newBlock = document.createElement('div');
+                newBlock.style.height = '40px';
+                newBlock.style.border = '2px solid black';
+                newBlock.style.borderRadius = '50%';
+                newBlock.style.width = '40px';
+                newBlock.style.margin = '10px 4px';
+                newBlock.style.display = 'inline-block';
+                newBlock.style.justifyContent = 'center';
+                newBlock.style.alignItems = 'center';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.fontSize = '17pt';
+                newBlock.style.fontWeight = 'bold';
+                newBlock.style.lineHeight = '40px';
+                newBlock.style.color = 'red';
+
+                if (i % 2 === 0) {
+                    newBlock.style.backgroundColor = 'black';
+                } else {
+                    newBlock.style.backgroundColor = 'white';
+                }
+
+                newBlock.innerHTML = `${i}`
+
+                main.appendChild(newBlock);
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -108,6 +141,8 @@
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="addMns80_Pl10()">10 => -80</button>
         <button onclick="translucentBlocks()">Полупрозрачные блоки</button><br>
+        <input type="number" placeholder="Введите количество кругов" min="0" id="qtCircles">
+        <button onclick="coloredCircles()">Цветные круги</button><br>
     </main>
 
     <footer>
