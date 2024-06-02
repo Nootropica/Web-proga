@@ -22,12 +22,36 @@
         }
         #seconds {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 25%;
+            left: 55%;
             transform: translate(-50%, -50%);
-            font-size: 58px;
+            font-size: 40px;
             font-weight: bold;
-            color: #ffffff;
+            color: black;
+            background-color: white;
+            z-index: 1;
+            border: 3px solid orange;
+        }
+        .clock {
+            width: 300px;
+            height: 300px;
+            border: 10px solid gray;
+            border-radius: 50%;
+            position: relative;
+            margin: 50px auto;
+            top: 50%;
+            background-color: rgb(155, 155, 155);
+        }
+        #second-hand {
+            width: 50%;
+            height: 6px;
+            background: orange;
+            z-index: 2;
+            position: absolute;
+            top: 50%;
+            transform-origin: 100%;
+            transform: rotate(90deg);
+            transition: transform 0.5s ease-in-out;
         }
     </style>
 </head>
@@ -37,9 +61,12 @@
      <div id="time">00:00:00</div>
     </header>
  
-     <main>
-         <div id="seconds"></div>
-     </main>
+    <main>
+        <div id="seconds"></div>
+        <div class="clock">
+            <div id="second-hand"></div>
+        </div>
+    </main>
     <footer>
         &copy; Владислав Печенкин, ФБИ-22, 2 курс, 2024
     </footer>
