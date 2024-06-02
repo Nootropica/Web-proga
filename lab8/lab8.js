@@ -1,10 +1,19 @@
-function showDate() {
-    var now = new Date();
-    var days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
-    var months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+function getDayOfWeek() {
+    const day = parseInt(document.getElementById('day').value);
+    const month = parseInt(document.getElementById('month').value);
+    const year = parseInt(document.getElementById('year').value);
 
-    document.getElementById('year').textContent = 'Текущий год: ' + now.getFullYear();
-    document.getElementById('month').textContent = 'Текущий месяц: ' + months[now.getMonth()];
-    document.getElementById('date').textContent = 'Текущая дата: ' + now.getDate();
-    document.getElementById('day').textContent = 'День недели: ' + days[now.getDay()];
+    // Проверка корректности введенных данных
+    if (!day || !month || !year) {
+        alert('Пожалуйста, заполните все поля.');
+        return;
+    }
+
+    // Создание даты
+    const date = new Date(year, month - 1, day); // Месяц в JS начинается с 0
+    const dayOfWeek = date.getDay();
+    
+    const days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+
+    document.getElementById('result').textContent = `День недели: ${days[dayOfWeek]}`;
 }
