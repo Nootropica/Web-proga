@@ -8,9 +8,14 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <script src="lab8.js"></script>
     <style>
-        #current-date {
-            color: rgb(165, 255, 62)
-        }
+        .frame {
+                border: 3px solid rgb(255, 255, 255);
+                border-radius: 5px;
+                background-color: rgb(159, 138, 255);
+                padding: 30px;
+                width: fit-content;
+                margin: auto; 
+            }
     </style>
 </head>
 <body onload="showDate()">
@@ -19,7 +24,12 @@
     </header>
 
     <main>
-        <div id="current-date"></div>
+        <div id="current-date" class="frame">
+            <p id="year"></p>
+            <p id="month"></p>
+            <p id="date"></p>
+            <p id="day"></p>
+        </div>
     </main>
 
     <footer>
