@@ -6,44 +6,6 @@
     <title>Печенкин Владислав Витальевич. Лабораторная 8</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <script src="lab8.js"></script>
-    <style>
-        .container {
-            max-width: 300px;
-            margin: auto;
-            padding: 20px;
-            border: 5px solid #ffffff;
-            border-radius: 5px;
-            color: #ffffff;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            color: #80ff46;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 15px;
-            background: #00ccff;
-            color: #fff;
-            text-align: center;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .result {
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 18px;
-        }
-    </style>
 </head>
 <body onload="showDate()">
     <header>
@@ -51,25 +13,17 @@
     </header>
 
     <main>
-        <div class="container">
-            <h2>Определение дня недели</h2>
-            <div class="form-group">
-                <label for="day">День</label>
-                <input type="number" id="day" min="1" max="31">
-            </div>
-            <div class="form-group">
-                <label for="month">Месяц</label>
-                <input type="number" id="month" min="1" max="12">
-            </div>
-            <div class="form-group">
-                <label for="year">Год</label>
-                <input type="number" id="year" min="1900">
-            </div>
-            <div class="btn" onclick="getDayOfWeek()">День недели</div>
-            <div class="result" id="result"></div>
-        </div>
+        <h1>Лабораторная работа 8</h1>
+        <ul>
+            <li><a href="data.html">Дата</a></li>
+        </ul>
+        <ul>
+            <li><a href="get-days-count.html">Число дней с даты рождения</a></li>
+        </ul>
+        <ul>
+            <li><a href="time.html">Время</a></li>
+        </ul>
     </main>
-
     <footer>
         &copy; Владислав Печенкин, ФБИ-22, 2 курс, 2024
     </footer>
